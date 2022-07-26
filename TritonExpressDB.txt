@@ -1,0 +1,45 @@
+
+
+
+--------------------CREATE DB SCRIPT------------------------------
+
+--CREATE TABLE Vehicles (
+--    VehicleID int NOT NULL  identity(1,1)  PRIMARY KEY,
+--    VehicleMake varchar(255),
+--    VehicleModel varchar(255),
+--    VehicleColor varchar(255)
+--);
+
+
+--CREATE TABLE Waybill (
+--    WaybillID int NOT NULL  identity(1,1)  PRIMARY KEY,
+--    CurrentBranch varchar(255),
+--	ArrivalDate varchar(255),
+--	DepartureDate  varchar(255),
+--	VehicleID int FOREIGN KEY REFERENCES Vehicles(VehicleID)
+--);
+
+--CREATE TABLE Branch (
+--    BranchID int NOT NULL  identity(1,1)  PRIMARY KEY,
+--	BranchName varchar(255),
+--	ArrivalDate varchar(255),
+--	DepartureDate  varchar(255),
+--	WaybillID int FOREIGN KEY REFERENCES Waybill(WaybillID),
+--	VehicleID int FOREIGN KEY REFERENCES Vehicles(VehicleID)
+--);
+
+----------------INSERT DB SCRIPT..............................
+
+--INSERT INTO Vehicles ( VehicleMake, VehicleModel, VehicleColor, Registration)
+--VALUES ('Mercedese', 'GLA', 'Black','LC38KYGP');
+
+--INSERT INTO Waybill(CurrentBranch,ArrivalDate,DepartureDate,VehicleID)
+--VALUES ('Durban', '10/06/2022', '15/06/2022',1);
+
+--INSERT INTO Branch(BranchName,ArrivalDate,DepartureDate,WaybillID,VehicleID)
+--VALUES ('Durban', '10/06/2022', '15/06/2022',1,1);
+
+
+
+
+

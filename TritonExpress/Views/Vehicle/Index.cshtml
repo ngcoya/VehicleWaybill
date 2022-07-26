@@ -1,0 +1,64 @@
+﻿@model IEnumerable<TritonExpress.Models.Vehicle>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    @*<a asp-action="Create">Create New</a>*@
+    <a asp-action="Create" class="btn btn-sm btn-success m1-1">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VehicleMake)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VehicleModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VehicleColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Registration)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleMake)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Registration)
+            </td>
+            <td>
+              @*<a asp-action="Edit" asp-route-id="@item.VehicleId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.VehicleId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.VehicleId">Delete</a>*@
+
+                <div class="btn-group">
+                    <a asp-action="Edit" asp-route-id="@item.VehicleId" class="btn btn-sm btn-info"> Edit </a> 
+                    <a asp-action="Details" asp-route-id="@item.VehicleId" class="btn btn-sm btn-primary m1-1"> Details</a> 
+                    <a asp-action="Delete" asp-route-id="@item.VehicleId" class="btn btn-sm btn-info btn-danger m1-1"> Delete</a> 
+                    <a asp-action="Waybill" asp-route-id="@item.VehicleId" class="btn btn-sm btn-info m1-1"> Assign </a>
+                </div>
+
+
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
